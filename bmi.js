@@ -79,7 +79,9 @@ console.log(LINE); // Logs the dashed-line.
  */
 window.alert("Welcome to my BMI Calculator, if you want to calculate your BMI please press OK");
 let gender = ""
-gender = prompt("I need some personal Information to calculate your BMI please answer truthfully. Are you male or female?");
+do {
+    gender = prompt("I need some personal Information to calculate your BMI please answer truthfully. Are you male or female?");
+} while (gender.toLowerCase() != "male" && gender.toLowerCase() != "female");
 let firstname = window.prompt("What is your first name?");
 let lastname = window.prompt("What is your last name?");
 let height = Number(window.prompt("What is your height in cm?"));
