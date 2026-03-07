@@ -77,3 +77,64 @@ console.log(LINE); // Logs the dashed-line.
  * TODO: Make sure to TEST YOUR SOFTWARE! Does it work, when People are smaller than 1 meter? Or taller than 2?
  * Tip: An 18-Year old Woman, sized 160cm with 60 kg should have a BMR of 1467 kcal and a BMI of 23.4375.
  */
+window.alert("Welcome to my BMI Calculator, if you want to calculate your BMI please press OK");
+let gender = ""
+do {
+    gender = prompt("I need some personal Information to calculate your BMI please answer truthfully. Are you male or female?");
+} while (gender.toLowerCase() != "male" && gender.toLowerCase() != "female");
+let firstname = window.prompt("What is your first name?");
+let lastname = window.prompt("What is your last name?");
+let height = Number(window.prompt("What is your height in cm?"));
+let age = Number(window.prompt("What is your age in years?"));
+let weight = Number(window.prompt("What is your weight in kg?"));
+if (gender.toLowerCase() === "male") {
+    console.log("Name: " + lastname + ", " + firstname);
+    console.log(LINE);
+    console.log("Age: " + age +" Years");
+    console.log("Height: " + height + "cm");
+    console.log("Weight: " + weight + " kg");
+    bmr = 66 + 14 * weight + 5 * height - 7 * age;
+    bmi = (10000 * weight) / (height**2);
+    console.log("Basal Metabolic Rate: " + bmr + " kcal");
+    console.log("Body Mass Index: " + bmi);
+    if (bmi >= 18 && bmi <= 25) {
+        console.log("Normal Weight: Yes");
+        console.log("Danger: No");
+        window.alert("Herzlichen Glückwunsch ihr BMI liegt im optimalen Bereich");
+
+
+    } else if (bmi <= 16 || bmi >= 30) {
+        console.log("Normal Weight: No");
+        console.log("Danger: Yes");
+        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich. In anderen Worten, Sie sind FETT! ");
+
+    } else {
+        console.log("Normal Weight: No");
+        console.log("Danger: No");
+        window.alert("Ihr BMI ist nicht optimal aber auch nicht Besorgniserregend. ")
+    }
+} else if (gender.toLowerCase() === "female") {
+    console.log("Name: " + firstname + ", " + lastname);
+    console.log(LINE);
+    console.log("Age: " + age +" Years");
+    console.log("Height: " + height + "cm");
+    console.log("Weight: " + weight + " kg");
+    bmr = 655 + 10 * weight + 2 * height - 6 * age;
+    bmi = (10000 * weight) / (height**2);
+    console.log("Basal Metabolic Rate: " + bmr + " kcal");
+    console.log("Body Mass Index: " + bmi);
+    if (bmi >= 18 && bmi <= 25) {
+        console.log("Normal Weight: Yes");
+        console.log("Danger: No");
+        window.alert("Herzlichen Glückwunsch ihr BMI liegt im optimalen Bereich");
+
+    } else if (bmi <= 16 || bmi >= 30) {
+        console.log("Normal Weight: No");
+        console.log("Danger: Yes");
+        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich. In anderen Worten, Sie sind FETT! ");
+    } else {
+        console.log("Normal Weight: No");
+        console.log("Danger: No");
+        window.alert("Ihr BMI ist nicht optimal aber auch nicht Besorgniserregend. ")
+    }
+}
