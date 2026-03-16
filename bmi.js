@@ -79,6 +79,8 @@ console.log(LINE); // Logs the dashed-line.
  */
 window.alert("Welcome to my BMI Calculator, if you want to calculate your BMI please press OK");
 let gender = ""
+let answer1 = "No"
+let answer2 = "Yes"
 do {
     gender = prompt("I need some personal Information to calculate your BMI please answer truthfully. Are you male or female?");
 } while (gender.toLowerCase() != "male" && gender.toLowerCase() != "female");
@@ -88,53 +90,53 @@ let height = Number(window.prompt("What is your height in cm?"));
 let age = Number(window.prompt("What is your age in years?"));
 let weight = Number(window.prompt("What is your weight in kg?"));
 if (gender.toLowerCase() === "male") {
-    console.log("Name: " + lastname + ", " + firstname);
+    console.log("Name:\t\t\t\t\t" + lastname + ", " + firstname);
     console.log(LINE);
-    console.log("Age: " + age +" Years");
-    console.log("Height: " + height + "cm");
-    console.log("Weight: " + weight + " kg");
+    console.log("Age:\t\t\t\t\t" + age +" Years");
+    console.log("Height:\t\t\t\t\t" + height + "cm");
+    console.log("Weight:\t\t\t\t\t" + weight + " kg");
     bmr = 66 + 14 * weight + 5 * height - 7 * age;
     bmi = (10000 * weight) / (height**2);
-    console.log("Basal Metabolic Rate: " + bmr + " kcal");
-    console.log("Body Mass Index: " + bmi);
+    console.log("Basal Metabolic Rate:\t" + bmr + " kcal");
+    console.log("Body Mass Index:\t\t" + bmi);
     if (bmi >= 18 && bmi <= 25) {
-        console.log("Normal Weight: Yes");
-        console.log("Danger: No");
+        console.log("Normal Weight:\t\t\t" + answer2);
+        console.log("Danger:\t\t\t\t\t" + answer1);
         window.alert("Herzlichen Glückwunsch ihr BMI liegt im optimalen Bereich");
 
 
     } else if (bmi <= 16 || bmi >= 30) {
-        console.log("Normal Weight: No");
-        console.log("Danger: Yes");
-        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich. In anderen Worten, Sie sind FETT! ");
+        console.log("Normal Weight:\t\t\t" + answer1);
+        console.log("Danger:\t\t\t\t\t" + answer2);
+        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich!");
 
     } else {
-        console.log("Normal Weight: No");
-        console.log("Danger: No");
+        console.log("Normal Weight:\t\t\t" + answer1);
+        console.log("Danger:\t\t\t\t\t" + answer1);
         window.alert("Ihr BMI ist nicht optimal aber auch nicht Besorgniserregend. ")
     }
 } else if (gender.toLowerCase() === "female") {
-    console.log("Name: " + firstname + ", " + lastname);
+    console.log("Name:\t\t\t\t\t" + firstname + ", " + lastname);
     console.log(LINE);
-    console.log("Age: " + age +" Years");
-    console.log("Height: " + height + "cm");
-    console.log("Weight: " + weight + " kg");
+    console.log("Age:\t\t\t\t\t" + age +" Years");
+    console.log("Height:\t\t\t\t\t" + height + "cm");
+    console.log("Weight:\t\t\t\t\t" + weight + " kg");
     bmr = 655 + 10 * weight + 2 * height - 6 * age;
     bmi = (10000 * weight) / (height**2);
-    console.log("Basal Metabolic Rate: " + bmr + " kcal");
-    console.log("Body Mass Index: " + bmi);
+    console.log("Basal Metabolic Rate:\t" + bmr + " kcal");
+    console.log("Body Mass Index:\t\t" + bmi);
     if (bmi >= 18 && bmi <= 25) {
-        console.log("Normal Weight: Yes");
-        console.log("Danger: No");
+        console.log("Normal Weight:\t\t\t" + answer2);
+        console.log("Danger:\t\t\t\t\t" + answer1);
         window.alert("Herzlichen Glückwunsch ihr BMI liegt im optimalen Bereich");
 
     } else if (bmi <= 16 || bmi >= 30) {
-        console.log("Normal Weight: No");
-        console.log("Danger: Yes");
-        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich. In anderen Worten, Sie sind FETT! ");
+        console.log("Normal Weight:\t\t\t" + answer1);
+        console.log("Danger:\t\t\t\t\t" + answer2);
+        window.alert("Achtung ihr BMI liegt im gefährlichen Bereich! ");
     } else {
-        console.log("Normal Weight: No");
-        console.log("Danger: No");
+        console.log("Normal Weight:\t\t\t" + answer1);
+        console.log("Danger:\t\t\t\t\t" + answer1);
         window.alert("Ihr BMI ist nicht optimal aber auch nicht Besorgniserregend. ")
     }
 }
